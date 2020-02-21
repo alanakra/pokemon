@@ -21,36 +21,36 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="index.php">Ajouter<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="combattants.php">Combat</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="admin.php">Admin</a>
       </li>
     </ul>
   </div>
 </nav>
  <div class="container">
- <h1 class="text-center mt-1">Modifier votre pokémon</h1>
+ <h1 class="text-center mt-1">Modifier <?php echo $update->getName() ?></h1>
   <div class="row">
     <form action="<?php echo 'traiteupdate.php?id='.$update->getId() ?>" class="col-12">
     <div class="form-group">
             <label for="name">Nom</label>
-            <input type="text" name="name" class="form-control" value="<?php echo $update->getName() ?>" require>
+            <input type="text" name="name" class="form-control" value="<?php echo $update->getName() ?>" required>
     </div>
 
     <div class="form-group">
             <label for="pv">PV</label>
-            <input type="text" name="pv" class="form-control" value="<?php echo $update->getPv() ?>" require>
+            <input type="text" name="pv" class="form-control" value="<?php echo $update->getPv() ?>" required>
     </div>
         
     <div class="form-group">
             <label for="atk">Points d'attaque</label>
             <input type="text" name="atk" class="form-control"
-            value="<?php echo $update->getAtk() ?>" require>
+            value="<?php echo $update->getAtk() ?>" required>
     </div>
         
         <br>
