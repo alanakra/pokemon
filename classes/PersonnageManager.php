@@ -49,7 +49,7 @@
     public function updatePersonnage(Personnage $perso){
         $requete = "UPDATE personnages SET name = '" . $perso->getName() ."', pv=" . $perso -> getPv() . ", atk=" . $perso -> getAtk() . " WHERE id =". $perso->getId() . ";";
         $stmt = $this->db->query($requete);
-        echo $requete;
+        
     }
 
     public function deletePersonnage($id){
