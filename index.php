@@ -42,21 +42,21 @@
        
        <div class="form-group">
             <label for="name">Nom</label>
-            <input type="text" name="name" class="form-control" require>
+            <input type="text" name="name" class="form-control" required>
         </div>
         
         <br>
         
         <div class="form-group">
             <label for="pv">PV</label>
-            <input type="text" name="pv" class="form-control" require>
+            <input type="text" name="pv" class="form-control" required>
         </div>
         
         <br>
         
         <div class="form-group">
             <label for="atk">Points d'attaque</label>
-            <input type="text" name="atk" class="form-control" require>
+            <input type="text" name="atk" class="form-control" required>
         </div>
         
         <br>
