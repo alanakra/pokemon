@@ -42,6 +42,11 @@ var_dump($id2);
 
 $id1->attaque($id2);
 
+// if(!$id2->is_alive()){
+//   $manager->deletePersonnage($id2->getId());
+// }
+
+
 $UpdatePerso = $manager->updatePersonnage($id2);
 
 echo'<pre>';
