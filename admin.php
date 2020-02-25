@@ -56,8 +56,8 @@
 
                 <tr>
                     <td scope="row"><?php echo $perso -> getName() ?></td>
-                    <td><?php echo $perso -> getPv() ?></td>
                     <td><?php echo $perso -> getAtk() ?></td>
+                    <td><?php echo $perso -> getPv() ?></td>
                     <td> <a href="delete.php?id=<?php echo $perso -> getId()?>" class="text-danger">Supprimer </a></td>
                     <td> <a href="update.php?id=<?php echo $perso -> getId()?>" class="text-info">Modifier </a></td>
                 </tr>
