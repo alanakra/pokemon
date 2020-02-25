@@ -37,12 +37,16 @@
  <h1 class="text-center mt-1">Modifier <?php echo $update->getName() ?></h1>
   <div class="row">
     <form action="<?php echo 'traiteupdate.php?id='.$update->getId() ?>" class="col-12">
-    <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" name="name" class="form-control" value="<?php echo $update->getName() ?>" required>
-    </div>
 
+ <fieldset disabled>
     <div class="form-group">
+    <label for="pv">ID</label>
+    <input type="text" class="form-control" name="id"
+    value="<?php echo $update->getId() ?>">
+    </div>
+ </fieldset>
+
+    <div class="form-group" >
             <label for="pv">PV</label>
             <input type="text" name="pv" class="form-control" value="<?php echo $update->getPv() ?>" required>
     </div>

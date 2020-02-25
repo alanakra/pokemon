@@ -2,14 +2,6 @@
  class PersonnageManager{
   private $db;
 
-    // public function __construct($db) {
-    //     $this -> setDb($db);
-    //     $this->setPv($pv);
-    //     $this->setAtk($atk);
-    //     self::$compteur++;
-    //     return $this->hydrate($donnees);
-    // }
-
     public function __construct($db){
         $this->db=$db;
     }
@@ -47,9 +39,11 @@
     }
 
     public function updatePersonnage(Personnage $perso){
-        $requete = "UPDATE personnages SET name = '" . $perso->getName() ."', pv=" . $perso -> getPv() . ", atk=" . $perso -> getAtk() . " WHERE id =". $perso->getId() . ";";
-        $stmt = $this->db->query($requete);
-        
+        $requete = $this->db->prepare("UPDATE personnages SET pv =:pv, atk=:atk WHERE id=:id");
+        $requete->bindValue(':pv', $perso->getPv());
+        $requete->bindValue(':atk', $perso->getAtk());
+        $requete->bindValue(':id', $perso->getId());
+        $requete->execute();
     }
 
     public function deletePersonnage($id){

@@ -1,16 +1,20 @@
 <?php
 require 'start.php';
-$manager = new PersonnageManager($db);
-$name = htmlspecialchars($_GET['name']);
-$pv = htmlspecialchars($_GET['pv']);
-$atk = htmlspecialchars($_GET['atk']);
 
 var_dump($_GET);
 
+$manager = new PersonnageManager($db);
+$id = $_GET['id'];
+$pv = (int)htmlspecialchars($_GET['pv']);
+$atk = (int)htmlspecialchars($_GET['atk']);
 
+$update = new Personnage(["id"=>$id, "pv"=>$pv, "atk"=>$atk]);
 
+$manager->updatePersonnage($update);
 
-$updatePerso = $manager->updatePersonnage($_GET);
-
-var_dump($updatePerso);
+if($manager){
+ header('Location:admin.php');
+}else{
+ echo "Aucune mise à jour";
+}
 ?>
