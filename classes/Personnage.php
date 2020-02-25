@@ -1,12 +1,10 @@
 <?php
  class Personnage{
-  //m)
   public $name;
   public $pv = 100;
   public $atk = 20;
   protected $id;
   const PV_MAX = 100;
-  // r)
   const MAXLIFE = 100;
   private static $compteur=0;
 
@@ -18,7 +16,7 @@
   public function getId(){
     return $this ->id;
   }
-    // n)
+
     public function getName(){
      return $this->name;
     }
@@ -61,13 +59,6 @@
       }
     }
 
-  // public function __construct($a,$b,$c){
-  //  $this-> name = $a;
-  //  $this-> pv = $b;
-  //  $this-> atk = $c;
-  // }
-
-  // q)
   public function __construct(array $donnees){
    self::$compteur++;
    return $this->hydrate($donnees);
@@ -81,11 +72,10 @@
     echo "<br>".$this->name." est vivant";
     return true;
    }
+
+  // return($this->pv>0);
   }
  
-  // public function regenerer($x){
-  //  $this->pv+=$x;
-  // }
 
   public function attaque(Personnage $x){
    $x->pv -= $this->atk;
@@ -93,12 +83,10 @@
 
 
 
-  // o)
   public function niveau(){
    return "<br>".$this->getName()." attaque de ".$this->getAtk()." et a actuellement ".$this->getPv()." PV";
   }
 
-  // r)
   public function reinitPV(){
    return "<br>".$this->setPv(self::MAXLIFE);
   }
